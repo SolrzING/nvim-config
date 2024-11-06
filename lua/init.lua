@@ -1,0 +1,5 @@
+require "config.settings"
+require "config.lazy"
+require "config.keymaps"
+require "config.filetype"
+require "config.focus_disable"
