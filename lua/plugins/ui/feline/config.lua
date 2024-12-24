@@ -50,23 +50,23 @@ function M.setup()
 	}
 
 	local vi_mode_text = {
-		n = "NORMAL",
-		i = "INSERT",
-		v = "VISUAL",
-		[''] = "V-BLOCK",
-		V = "V-LINE",
-		c = "COMMAND",
-		no = "UNKNOWN",
-		s = "UNKNOWN",
-		S = "UNKNOWN",
-		ic = "UNKNOWN",
-		R = "REPLACE",
-		Rv = "UNKNOWN",
-		cv = "UNKWON",
-		ce = "UNKNOWN",
-		r = "REPLACE",
-		rm = "UNKNOWN",
-		t = "INSERT"
+		n =			"NORMAL",
+		i =			"INSERT",
+		v =			"VISUAL",
+		[''] =	"VBLOCK",
+		V =			"V-LINE",
+		c =			"CMMAND",
+		no =		"UNKNOWN",
+		s =			"UNKNOWN",
+		S =			"UNKNOWN",
+		ic =		"UNKNOWN",
+		R =			"RPLACE",
+		Rv =		"UNKNOWN",
+		cv =		"UNKWON",
+		ce =		"UNKNOWN",
+		r =			"RPLACE",
+		rm =		"UNKNOWN",
+		t =			"INSERT"
 	}
 
 	local c = {
@@ -84,6 +84,19 @@ function M.setup()
 			end,
 		},
 
+		neocomposer = {
+			provider = function()
+				return require('NeoComposer.ui').status_recording() or ""
+			end,
+			-- hl = {
+			-- 	fg = "yellow",
+			-- 	bg = "bg",
+			-- 	style = "bold",
+			-- },
+			-- left_sep = "block",
+			-- right_sep = "block",
+		},
+
 
 		gitBranch = {
 			provider = "git_branch",
@@ -92,8 +105,8 @@ function M.setup()
 				bg = "bg",
 				style = "bold",
 			},
-			left_sep = "block",
-			right_sep = "block",
+			-- left_sep = "block",
+			-- right_sep = "block",
 		},
 		gitDiffAdded = {
 			provider = "git_diff_added",
@@ -101,8 +114,8 @@ function M.setup()
 				fg = "green",
 				bg = "bg",
 			},
-			left_sep = "block",
-			right_sep = "block",
+			-- left_sep = "block",
+			-- right_sep = "block",
 		},
 		gitDiffRemoved = {
 			provider = "git_diff_removed",
@@ -110,17 +123,17 @@ function M.setup()
 				fg = "red",
 				bg = "bg",
 			},
-			left_sep = "block",
-			right_sep = "block",
+			-- left_sep = "block",
+			-- right_sep = "block",
 		},
 		gitDiffChanged = {
 			provider = "git_diff_changed",
 			hl = {
-				fg = "fg",
+				fg = "blue",
 				bg = "bg",
 			},
-			left_sep = "block",
-			right_sep = "right_filled",
+			-- left_sep = "block",
+			-- right_sep = "right_filled",
 		},
 
 
@@ -132,11 +145,20 @@ function M.setup()
 			},
 		},
 
+		I = {
+			provider = "|",
+			hl = {
+				fg = "fg",
+				bg = "bg",
+			},
+		},
+
 
 		fileinfo = {
 			provider = {
 				name = "file_info",
 				opts = {
+					colored_icon = false,
 					type = "full-path",
 				},
 			},
@@ -149,34 +171,38 @@ function M.setup()
 			hl = {
 				style = "bold",
 			},
-			left_sep = " ",
-			right_sep = " ",
+			-- left_sep = " ",
+			-- right_sep = " ",
 		},
 
 
 
 		diagnostic_errors = {
 			provider = "diagnostic_errors",
+			icon = '  ',
 			hl = {
 				fg = "error",
 			},
 		},
 		diagnostic_warnings = {
 			provider = "diagnostic_warnings",
+			icon = '  ',
 			hl = {
 				fg = "warning",
 			},
 		},
-		diagnostic_hints = {
-			provider = "diagnostic_hints",
-			hl = {
-				fg = "hint",
-			},
-		},
 		diagnostic_info = {
 			provider = "diagnostic_info",
+			icon = '  ',
 			hl = {
 				fg = "info",
+			},
+		},
+		diagnostic_hints = {
+			provider = "diagnostic_hints",
+			icon = ' 󰌵 ',
+			hl = {
+				fg = "hint",
 			},
 		},
 
@@ -215,8 +241,8 @@ function M.setup()
 				bg = "bg",
 				style = "italic",
 			},
-			left_sep = "block",
-			right_sep = "block",
+			-- left_sep = "block",
+			-- right_sep = "block",
 		},
 		position = {
 			provider = "position",
@@ -225,8 +251,8 @@ function M.setup()
 				bg = "bg",
 				style = "bold",
 			},
-			left_sep = "block",
-			right_sep = "block",
+			-- left_sep = "block",
+			-- right_sep = "block",
 		},
 		line_percentage = {
 			provider = "line_percentage",
@@ -235,19 +261,25 @@ function M.setup()
 				bg = "bg",
 				style = "bold",
 			},
-			left_sep = "block",
-			right_sep = "block",
+			-- left_sep = "block",
+			-- right_sep = "block",
 		},
 	}
 
 	local left_1 = {
 		c.vim_mode,
 		c.__,
+		c.neocomposer,
+		-- c.I,
+		-- c.__,
 		c.gitBranch,
 		c.gitDiffAdded,
 		c.gitDiffRemoved,
 		c.gitDiffChanged,
-		c.fileinfo,
+		-- c.__,
+		-- c.I,
+		-- c.__,
+		-- c.fileinfo,
 	}
 
 	local left_2 = {
@@ -265,13 +297,14 @@ function M.setup()
 		c.diagnostic_hints,
 		c.__,
 		c.lsp_client_names,
-		c.__,
 		c.file_type,
 		c.__,
 		c.file_encoding,
+		c.__,
 		c.position,
+		c.__,
 		c.line_percentage,
-		c.scroll_bar,
+		c.__,
 	}
 
 	local left_inac = {

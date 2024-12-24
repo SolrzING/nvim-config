@@ -1,4 +1,5 @@
 vim.g.mapleader = " " --tecla lider
+vim.g.maplocalleader = ','
 
 vim.o.number = true --Enumeracion
 --vim.o.relativenumber = true --Enumeracion relativa

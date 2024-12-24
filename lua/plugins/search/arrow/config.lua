@@ -39,8 +39,8 @@ function M.setup()
 			treesitter_context = nil, -- puede ser { line_shift_down = 2 }
 		},
 		separate_save_and_remove = false, -- si es verdadero, eliminará el interruptor y creará los mapas de teclas de guardar/eliminar.
-		leader_key = ",",
-		buffer_leader_key = ';', -- Per Buffer Mappings
+		leader_key = "<leader>,",
+		buffer_leader_key = '<leader>;', -- Per Buffer Mappings
 		save_key = "cwd", -- lo que se utilizará como raíz para guardar los marcadores. También puede ser `git_root`.
 		global_bookmarks = true, -- si es verdadero, arrow guardará archivos globalmente (ignora separate_by_branch)
 		index_keys = "123456789zxcbnmZXVBNM,afghjklAFGHJKLwrtyuiopWRTYUIOP", -- teclas asignadas al índice de marcadores, es decir, el primer marcador será accesible por 1, y el duodécimo - por c

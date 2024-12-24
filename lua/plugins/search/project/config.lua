@@ -14,7 +14,18 @@ function M.setup()
 
 		-- Todos los patrones usados para detectar el dir raíz, cuando **"pattern"** está en
 		-- detection_methods
-		patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
+		patterns = {
+			-- ".git",
+			-- "_darcs",
+			-- ".hg",
+			-- ".bzr",
+			-- ".svn",
+			-- "Makefile",
+			-- "package.json",
+			-- "run.",
+			-- "main.",
+			".workspace_project",
+		},
 
 		-- Tabla de clientes lsp a ignorar por nombre
 		-- ej: { "efm", ... }
@@ -29,7 +40,7 @@ function M.setup()
 
 		-- Cuando se establece en falso, recibirás un mensaje cuando project.nvim cambie tu
 		-- directorio.
-		silent_chdir = false,
+		silent_chdir = true,
 
 		-- Qué alcance para cambiar el directorio, las opciones válidas son
 		-- * global (predeterminado)

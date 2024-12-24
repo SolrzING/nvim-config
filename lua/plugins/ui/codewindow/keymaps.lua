@@ -1,22 +1,16 @@
 local M = {}
 
-local keymap = vim.keymap.set
-local opts = { noremap = true, silent = true }
-local extend = vim.tbl_extend
+local keymap = require("function.keymap").keymap
 
 local codewindow = require('codewindow')
-local minimap_leader_key = "<Tab>"
-
+local plugin_key = "<Tab>"
 
 function M.setup()
-	-- keymap('n', '<leader>' .. minimap_leader_key .. 'o', codewindow.open_minimap,
-	-- 	extend('force', opts, { desc = "Abrir el minimapa" }))
-	keymap('n', '<leader>' .. minimap_leader_key .. 'm', codewindow.toggle_minimap,
-		extend('force', opts, { desc = "Alternar el minimapa" }))
-	-- keymap('n', '<leader>' .. minimap_leader_key .. 'c', codewindow.close_minimap,
-	-- 	extend('force', opts, { desc = "Cerrar el minimapa" }))
-	keymap('n', '<leader>' .. minimap_leader_key .. 'f', codewindow.toggle_focus,
-		extend('force', opts, { desc = "Enfocar/desenfocar el minimapa" }))
+	keymap({ "n", }, "<leader>" .. plugin_key, "", { desc = "Minimapa" })
+	-- keymap('n', '<leader>' .. plugin_key .. 'o', codewindow.open_minimap, { desc = "Abrir el minimapa" })
+	keymap('n', '<leader>' .. plugin_key .. 'm', codewindow.toggle_minimap, { desc = "Alternar el minimapa" })
+	-- keymap('n', '<leader>' .. plugin_key .. 'c', codewindow.close_minimap, { desc = "Cerrar el minimapa" })
+	keymap('n', '<leader>' .. plugin_key .. 'f', codewindow.toggle_focus, { desc = "Enfocar/desenfocar el minimapa" })
 end
 
 return M

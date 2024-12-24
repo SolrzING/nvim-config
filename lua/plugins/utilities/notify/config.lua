@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
 	require("notify").setup {
-		render = "simple",
+		render = "wrapped-compact",
 		stages = "fade_in_slide_out",
 		background_colour = "NotifyBackground",
 		timeout = 3000,

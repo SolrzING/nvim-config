@@ -20,7 +20,6 @@ function M.setup()
 		relative = 'win', -- A qué se colocará el minimapa en relación, "win": la ventana actual, "editor": todo el editor
 		events = { 'TextChanged', 'InsertLeave', 'DiagnosticChanged', 'FileWritePost' } -- Eventos que actualizan la ventana de código
 	})
-	codewindow.apply_default_keybinds()
 end
 
 return M

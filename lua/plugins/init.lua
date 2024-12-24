@@ -1,6 +1,6 @@
 return {
-	require "plugins.autocomplete.init",
 	require "plugins.dap.init",
+	require "plugins.helper.init",
 	require "plugins.highlight.init",
 	require "plugins.installers.init",
 	require "plugins.search.init",

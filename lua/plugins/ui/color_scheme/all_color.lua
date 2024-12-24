@@ -23,7 +23,7 @@ local function get_colors()
 		msgerror = "ErrorMsg",
 		msgwarning = "WarningMsg",
 		msginfo = "InfoFloat",
-		msghint = "Purple",
+		msghint = "Green",
 	}
 
 	for name, group in pairs(groups) do

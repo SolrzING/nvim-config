@@ -3,22 +3,29 @@ local M = {}
 function M.setup()
 	-- Si deseas iconos para errores de diagnóstico, deberás definirlos en algún lugar:
 	vim.fn.sign_define("DiagnosticSignError",
-		{text = " ", texthl = "DiagnosticSignError"})
+		{text = " ", texthl = "DiagnosticSignError"})
 	vim.fn.sign_define("DiagnosticSignWarn",
-		{text = " ", texthl = "DiagnosticSignWarn"})
+		{text = " ", texthl = "DiagnosticSignWarn"})
 	vim.fn.sign_define("DiagnosticSignInfo",
-		{text = " ", texthl = "DiagnosticSignInfo"})
+		{text = " ", texthl = "DiagnosticSignInfo"})
 	vim.fn.sign_define("DiagnosticSignHint",
-		{text = "󰌵", texthl = "DiagnosticSignHint"})
+		{text = "󰌵 ", texthl = "DiagnosticSignHint"})
 
 	require("neo-tree").setup({
-		close_if_last_window = false, -- Cierra Neo-tree si es la última ventana en la pestaña
+		close_if_last_window = true, -- Cierra Neo-tree si es la última ventana en la pestaña
 		popup_border_style = "rounded",
 		enable_git_status = true,
 		enable_diagnostics = true,
 		-- La siguiente opcion esta desactualizada, revisar como actualizarla si lo llego a necesitar. by Terokl
 		--enable_normal_mode_for_inputs = false, -- Habilita el modo normal para los cuadros de diálogo de entrada.
-		open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- al abrir archivos, no utilices ventanas que contengan estos tipos de archivo o buftypes
+		open_files_do_not_replace_types = {
+			"terminal",
+			"trouble",
+			"qf",
+			-- "notify",
+			-- "nowrite",
+			-- "help"
+		}, -- al abrir archivos, no utilices ventanas que contengan estos tipos de archivo o buftypes
 		sort_case_insensitive = false, -- se utiliza al ordenar archivos y directorios en el árbol
 		sort_function = nil , -- utiliza una función personalizada para ordenar archivos y directorios en el árbol
 		-- sort_function = function (a,b)

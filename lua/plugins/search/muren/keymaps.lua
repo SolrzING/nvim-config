@@ -1,11 +1,9 @@
 local M = {}
 
-local keymap = vim.keymap.set
-local opts = { noremap = true, silent = true }
-local extend = vim.tbl_extend
+local keymap = require("function.keymap").keymap
 
 function M.setup()
-	keymap({ "n", "v" }, "<C-f>", ":MurenToggle<CR>", extend('force', opts, { desc = "Buscar/remplazar" }))
+	keymap({ "n", "v" }, "<C-f>e", ":MurenToggle<CR>", { desc = "Buscar/remplazar muren" })
 end
 
 return M

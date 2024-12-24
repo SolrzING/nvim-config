@@ -11,16 +11,16 @@ function M.setup()
 		---LHS de los mapeos de alternancia en modo NORMAL
 		toggler = {
 			---Mapeo de tecla para alternar comentario de línea
-			line = "gc",
+			line = "<C-o>",
 			---Mapeo de tecla para alternar comentario de bloque
-			block = "gb",
+			block = "ccO",
 		},
 		---LHS de los mapeos pendientes de operador en modo NORMAL y VISUAL
 		opleader = {
 			---Mapeo de tecla para comentario de línea
-			line = 'gcc',
+			line = '<C-o>',
 			---Mapeo de tecla para comentario de bloque
-			block = 'gbc',
+			block = 'ccO',
 		},
 		---LHS de mapeos adicionales
 		extra = {
